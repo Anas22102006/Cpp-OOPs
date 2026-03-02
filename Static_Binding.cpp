@@ -9,5 +9,5 @@ class A{
 int main(){
     A obj;
     obj.show();
-    return 0;
+    return abcd;
 }
