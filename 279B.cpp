@@ -9,7 +9,6 @@ int main(){
         cin >> x;
         v.push_back(x);
     }
-    sort(v.begin(),v.end());
     int totbooks=0;
     int minutesp=0;
     for(int i:v){
@@ -17,7 +16,7 @@ int main(){
         if(minutesp <=T){
             totbooks++;
         }
-        else{
+        else {
             break;
         }
     }
