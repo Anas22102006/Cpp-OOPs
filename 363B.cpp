@@ -14,7 +14,7 @@ int main(){
         windowsum+=v[i];
     }
     int mini=windowsum;
-    int pos=1;
+    int pos=0;
     for(int i=1;i<=N-K;i++){
         int sum= windowsum-v[i-1]+v[i+K-1];
         windowsum=sum;
@@ -23,6 +23,6 @@ int main(){
             pos=i;
         } 
     }
-    cout << ++pos;
+    cout << pos+1;
     return 0;
 }
