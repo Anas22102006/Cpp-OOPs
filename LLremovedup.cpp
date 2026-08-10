@@ -28,18 +28,15 @@ int main(){
         }
     }
     Node* dummy= head;
-    while(dummy!=nullptr){
-        Node* temp= dummy;
-        int val= dummy->data;
-        while(temp->next->next!=nullptr){
-            if(val==temp->data){
-                temp= temp->next-> next;
-            }
-            else{
-                temp= temp->next;
-            }
+    while(dummy!=nullptr && dummy->next!=nullptr){
+        if(dummy->data == dummy->next->data){
+            Node* tmp= dummy->next;
+            dummy->next = tmp->next;
+            delete tmp;
         }
-        dummy=dummy->next;
+        else{
+            dummy=dummy->next;
+        }
     }
     Node* dummy2=head;
     while(dummy2!= nullptr){
