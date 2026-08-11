@@ -66,6 +66,18 @@ Node* buildpre(vector<int> seq){        //O(n)
 
 
 }
+bool isSame(Node* root1, Node* root2){
+    if(root1== nullptr && root2== nullptr){
+        return true;
+    }
+    if(root1==nullptr|| root2==nullptr){
+        return false;
+    }
+    if(root1->val != root2->val){
+        return false;
+    }
+    return isSame(root1->left,root2->left) && isSame(root1->right,root2->right);
+}
 int height(Node* root){
     if(root==nullptr){
         return 0;
@@ -74,8 +86,11 @@ int height(Node* root){
 }
 int main(){
     vector<int> vec = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
+    vector<int> vec2 = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
     Node* root= buildpre(vec);
-    preorder(root);
+    ind=-1;
+    Node* root2 = buildpre(vec2);
+    /*preorder(root);
     cout << endl;
     inorder(root);
     cout << endl;
@@ -83,5 +98,6 @@ int main(){
     cout << endl;
     levelorder(root);
     cout << endl << height(root) ;
-    return 0;
+    return 0;*/
+    cout << isSame(root,root2);
 }
